@@ -60,3 +60,31 @@ id_livro int not null,
 id_categoria int not null
 );
 -- Procedures
+delimiter $
+create procedure as Modificar_Cliente(fazer enum('delete','update','insert'),id_c int, id_m int, id_l int, nome varchar(200),
+CPF int(11), telefone int(10), genero enum('F','M'))
+begin
+if(fazer=='insert', 
+insert clientes values
+(id_c,id_m,id_l,nome,CPF,telefone,genero),
+if(fazer=='update',
+))
+end &
+delimiter ;
+
+delimiter $
+create procedure as Modificar_Livro(id_l int, id_c int, titulo varchar(200),
+no_p int, ISBN int)
+begin
+insert livros values
+(id_l,id_c,titulo,no_p,ISBN)
+end &
+delimiter ;
+
+delimiter $
+create procedure as Modificar_Categoria(id_c int, tipo varchar(200))
+begin
+insert categorias values
+(id_c,tipo)
+end &
+delimiter ;
