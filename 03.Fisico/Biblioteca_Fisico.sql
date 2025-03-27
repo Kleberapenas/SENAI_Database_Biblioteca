@@ -37,7 +37,7 @@ foreign key(id_livro) references livros(id_livro)
 );
 
 -- Multa
-create table multa (
+create table multas (
 id_multa int not null auto_increment primary key,
 id_emprestimo int not null,
 id_cliente int not null,
